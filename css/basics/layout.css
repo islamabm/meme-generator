@@ -1,0 +1,22 @@
+/* .main-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.canvas-container {
+  grid-column: 1;
+}
+.edit {
+  grid-column: 2;
+} */
+
+/* .canvas-page {
+  display: grid;
+  grid-template-columns: 1fr, 1fr;
+}
+
+.canvas-page > *:not(.canvas-container) {
+  grid-column: 1;
+}
+.canvas-page > *:not(.canvas-container) {
+  grid-column: 2;
+} */

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body onload="init()">
+    <section class="gallery-container" hidden></section>
+    <section class="canvas-page" hidden>
+      <section class="edit">
+        <div class="inputs">
+          <table>
+            <tr>
+              <td>
+                <input
+                  type="text"
+                  class="text-input"
+                  name="image-text"
+                  placeholder="text"
+                  oninput="onChangeText()"
+                />
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <input
+                  type="text"
+                  class="font-input"
+                  name="font-text"
+                  placeholder="font size"
+                  oninput="onChangeTextFont(this.value)"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input
+                  type="color"
+                  class="color-input"
+                  name="text-color"
+                  onchange="onChangeColor(this.value)"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <button>
+                  <img
+                    onclick="onSwitchLine()"
+                    src="ICONS/up-and-down-opposite-double-arrows-side-by-side.png"
+                    alt=""
+                  />
+                </button>
+                <button>
+                  <img onclick="onAddLine()" src="ICONS/add.png" alt="" />
+                </button>
+                <button><img src="ICONS/trash.png" alt="" /></button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <button>
+                  <img src="ICONS/increase font - icon.png" alt="" />
+                </button>
+                <button>
+                  <img src="ICONS/decrease font - icon.png" alt="" />
+                </button>
+                <button><img src="ICONS/align-to-left.png" alt="" /></button>
+                <button>
+                  <img src="ICONS/center-text-alignment.png" alt="" />
+                </button>
+                <button><img src="ICONS/align-to-right.png" alt="" /></button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <datalist id="fonts">
+                  <option value="Impact"></option>
+                </datalist>
+                <button><img src="ICONS/text stroke.png" alt="" /></button>
+                <button>
+                  <img src="ICONS/paint-board-and-brush.png" alt="" />
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input
+                  type="file"
+                  class="file-input btn"
+                  name="image"
+                  onchange="onImgInput(event)"
+                />
+              </td>
+            </tr>
+          </table>
+        </div>
+      </section>
+
+      <div class="canvas-container">
+        <canvas
+          id="my-canvas"
+          width="300"
+          height="250"
+          style="outline: 1px solid green"
+        ></canvas>
+      </div>
+    </section>
+    <script src="js/utils.js"></script>
+    <script src="js/upload.js"></script>
+    <script src="js/meme-service.js"></script>
+    <script src="js/gallery-controller.js"></script>
+
+    <script src="js/meme-controller.js"></script>
+  </body>
+</html>

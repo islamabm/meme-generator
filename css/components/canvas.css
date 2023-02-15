@@ -1,0 +1,13 @@
+canvas {
+  display: block;
+  margin: auto;
+  background-color: white;
+  border: 1px solid black;
+}
+
+.canvas-container {
+  background-color: brown;
+  margin: auto;
+  width: 50vw;
+  height: 50vh;
+}
