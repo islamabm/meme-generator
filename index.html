@@ -4,8 +4,22 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
-  <body onload="init()">
-    <section class="gallery-container" hidden></section>
+  <body onload="init()" class="main-layout">
+    <header class="main-header main-layout full">
+      <section class="flex space-between align-center">
+        <div class="logo white">LOGO</div>
+        <div type="button" class="toggle-menu"></div>
+        <nav class="main-nav">
+          <ul class="main-menu clean-list flex">
+            <li><a class="clean-link white" href="#">Gallery</a></li>
+            <li><a class="clean-link white" href="#">Memes</a></li>
+            <li><a class="clean-link white" href="#">About</a></li>
+          </ul>
+        </nav>
+      </section>
+    </header>
+    <section class="gallery-container gallery-layout"></section>
+
     <section class="canvas-page" hidden>
       <section class="edit">
         <div class="inputs">
@@ -16,8 +30,9 @@
                   type="text"
                   class="text-input"
                   name="image-text"
+                  data-tranc="text-placeholder"
                   placeholder="text"
-                  oninput="onChangeText()"
+                  oninput="onChangeText(this.value)"
                 />
               </td>
             </tr>
@@ -28,6 +43,7 @@
                   type="text"
                   class="font-input"
                   name="font-text"
+                  data-tranc="font-size-placeholder"
                   placeholder="font size"
                   oninput="onChangeTextFont(this.value)"
                 />
@@ -84,6 +100,11 @@
                 </button>
               </td>
             </tr>
+            <!-- <tr>
+              <td>
+                <i class="fa-solid fa-face-smile"></i>
+              </td>
+            </tr> -->
             <tr>
               <td>
                 <input
@@ -96,9 +117,17 @@
             </tr>
             <tr>
               <td>
-                <button class="btn" onclick="onUploadImg()">
+                <button class="btn" onclick="onUploadImg()" data-tranc="upload">
                   Upload Image from Canvas
                 </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <select onchange="onSetLang(this.value)">
+                  <option value="en">English</option>
+                  <option value="he">עברית</option>
+                </select>
               </td>
             </tr>
           </table>
@@ -115,6 +144,7 @@
       </div>
     </section>
     <script src="js/utils.js"></script>
+    <script src="js/i18n.service.js"></script>
     <script src="js/upload.js"></script>
     <script src="js/sharing-on-facebook.js"></script>
     <script src="js/meme-service.js"></script>

@@ -1,22 +1,14 @@
-/* .main-layout {
+.main-layout {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-.canvas-container {
-  grid-column: 1;
-}
-.edit {
-  grid-column: 2;
-} */
-
-/* .canvas-page {
-  display: grid;
-  grid-template-columns: 1fr, 1fr;
+  grid-template-columns: 70px 1fr 70px;
 }
 
-.canvas-page > *:not(.canvas-container) {
-  grid-column: 1;
-}
-.canvas-page > *:not(.canvas-container) {
+.main-layout > *:not(.full) {
   grid-column: 2;
-} */
+}
+
+.gallery-layout {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}

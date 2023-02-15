@@ -31,13 +31,11 @@ function showCanvasPage() {
 }
 
 function showGalleryPage() {
-  const elCanvasPage = document.querySelector('.gallery-container')
-  elCanvasPage.hidden = false
+  document.querySelector('.gallery-container').classList.remove('hidden')
 }
 
 function hideGalleryPage() {
-  const elCanvasPage = document.querySelector('.gallery-container')
-  elCanvasPage.hidden = true
+  document.querySelector('.gallery-container').classList.add('hidden')
 }
 function onFlexBtnClicke() {
   showCanvasPage()
@@ -46,4 +44,13 @@ function onFlexBtnClicke() {
   let randomIdx = getRandomIntInclusive(0, gImgs.length - 1)
   setImg(randomIdx)
   renderMeme()
+}
+function onSetLang(lang) {
+  setLang(lang)
+  // const rtlLangs = ['he', 'ar']
+  // DONE: if lang is hebrew add RTL class to document.body
+  if (lang === 'he') document.body.classList.add('rtl')
+  else document.body.classList.remove('rtl')
+  renderBooks()
+  doTrans()
 }
