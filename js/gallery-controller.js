@@ -13,6 +13,7 @@ function renderGallery() {
   strHTMLs.push(
     `<button onclick="onFlexBtnClicke()" calss="felx">i am flexible</button>`
   )
+
   document.querySelector('.gallery-container').innerHTML = strHTMLs.join('')
 }
 
