@@ -3,11 +3,11 @@ let gCtx
 
 var gKeywordSearchCountMap = { funny: 12, cat: 16, baby: 2 }
 var gImgs = [
-  { id: 1, url: 'img/1.jpg', keywords: ['funny', 'cat'] },
-  { id: 2, url: 'img/2.jpg', keywords: ['hurry', 'cat'] },
-  { id: 3, url: 'img/3.jpg', keywords: ['hurry', 'cat'] },
-  { id: 4, url: 'img/4.jpg', keywords: ['hurry', 'cat'] },
-  { id: 5, url: 'img/5.jpg', keywords: ['hurry', 'cat'] },
+  { id: 1, url: 'img/1.jpg', keywords: ['funny'] },
+  { id: 2, url: 'img/2.jpg', keywords: ['hurry'] },
+  { id: 3, url: 'img/3.jpg', keywords: ['cat'] },
+  { id: 4, url: 'img/4.jpg', keywords: ['hurry'] },
+  { id: 5, url: 'img/5.jpg', keywords: ['cat'] },
 ]
 var gMeme = {
   selectedImgId: 5,
