@@ -43,8 +43,8 @@ function getMeme() {
 }
 
 // setLineTxt(gMeme)
-function setLineTxt(meme, newTxt) {
-  meme.lines[meme.selectedLineIdx].txt = newTxt
+function setLineTxt(newTxt) {
+  gMeme.lines[gMeme.selectedLineIdx].txt = newTxt
 }
 
 function addLine(meme, newTxt) {
