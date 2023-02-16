@@ -46,26 +46,13 @@
                 />
               </td>
             </tr>
-
-            <tr>
-              <td>
-                <input
-                  type="text"
-                  class="font-input"
-                  name="font-text"
-                  data-trans="font-size-placeholder"
-                  placeholder="font size"
-                  oninput="onChangeTextFont(this.value)"
-                />
-              </td>
-            </tr>
             <tr>
               <td>
                 <input
                   type="color"
                   class="color-input"
                   name="text-color"
-                  onchange="onChangeColor(this.value)"
+                  oninput="onChangeColor(this.value)"
                 />
               </td>
             </tr>
@@ -81,33 +68,62 @@
                 <button>
                   <img onclick="onAddLine()" src="ICONS/add.png" alt="" />
                 </button>
-                <button><img src="ICONS/trash.png" alt="" /></button>
+                <button>
+                  <img src="ICONS/trash.png" alt="" onclick="onDeleteLine()" />
+                </button>
               </td>
             </tr>
             <tr>
               <td>
-                <button>
+                <button onclick="onChangeFont(5)">
                   <img src="ICONS/increase font - icon.png" alt="" />
                 </button>
-                <button>
+                <button onclick="onChangeFont(-5)">
                   <img src="ICONS/decrease font - icon.png" alt="" />
                 </button>
-                <button><img src="ICONS/align-to-left.png" alt="" /></button>
                 <button>
-                  <img src="ICONS/center-text-alignment.png" alt="" />
+                  <img
+                    onclick="onSetAlign('L')"
+                    src="ICONS/align-to-left.png"
+                    alt=""
+                  />
                 </button>
-                <button><img src="ICONS/align-to-right.png" alt="" /></button>
+                <button>
+                  <img
+                    onclick="onSetAlign('C')"
+                    src="ICONS/center-text-alignment.png"
+                    alt=""
+                  />
+                </button>
+                <button>
+                  <img
+                    onclick="onSetAlign('R')"
+                    src="ICONS/align-to-right.png"
+                    alt=""
+                  />
+                </button>
               </td>
             </tr>
             <tr>
               <td>
-                <datalist id="fonts">
-                  <option value="Impact"></option>
-                </datalist>
                 <button><img src="ICONS/text stroke.png" alt="" /></button>
                 <button>
                   <img src="ICONS/paint-board-and-brush.png" alt="" />
                 </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input
+                  id="data1"
+                  list="data"
+                  oninput="onFontKindChanged(this.value)"
+                />
+                <datalist id="data">
+                  <option value="Impact"></option>
+                  <option value="Arial"></option>
+                  <option value="Verdana"></option>
+                </datalist>
               </td>
             </tr>
             <tr>
@@ -124,7 +140,6 @@
                   class="animate__zoomInRight toolbar"
                 >
                   😃
-                  <!-- <i class="fa-regular fa-face-surprise"></i> -->
                 </button>
 
                 <button

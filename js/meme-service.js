@@ -16,20 +16,23 @@ var gMeme = {
     {
       txt: '',
       size: 20,
-      align: 'left',
+      align: 'center',
       color: 'red',
+      font: 'Impact',
     },
     {
       txt: '',
       size: 20,
-      align: 'left',
+      align: 'center',
       color: 'red',
+      font: 'Impact',
     },
     {
       txt: '',
       size: 20,
-      align: 'left',
+      align: 'center',
       color: 'red',
+      font: 'Impact',
     },
   ],
 }
@@ -42,23 +45,19 @@ function getMeme() {
   return gMeme
 }
 
-// setLineTxt(gMeme)
 function setLineTxt(newTxt) {
   gMeme.lines[gMeme.selectedLineIdx].txt = newTxt
 }
 function addEmojiToTwxt(emoji) {
   gMeme.lines[gMeme.selectedLineIdx].txt += emoji
 }
-// function addLine(meme, newTxt) {
-//   meme.lines[gMeme.selectedLineIdx].txt = newTxt
-// }
 
 function setcolor(meme, newColor) {
   meme.lines[meme.selectedLineIdx].color = newColor
 }
 
-function setFont(meme, newFont) {
-  meme.lines[meme.selectedLineIdx].size = newFont
+function setFont(num) {
+  gMeme.lines[gMeme.selectedLineIdx].size += num
 }
 
 function setImg(id) {
@@ -91,15 +90,30 @@ function getImageById(imgId) {
 
 function drawText(text, idx) {
   gCtx.lineWidth = 2
-  // gCtx.strokeStyle = ''
-  gCtx.strokeStyle = `${gMeme.lines[gMeme.selectedLineIdx].color}`
+
+  gCtx.strokeStyle = `${gMeme.lines[idx].color}`
   gCtx.fillStyle = 'yellow'
-  gCtx.font = `${gMeme.lines[gMeme.selectedLineIdx].size}px Arial`
-  // gCtx.font = ''
-  gCtx.textAlign = 'center'
+  gCtx.font = `${gMeme.lines[idx].size}px ${gMeme.lines[idx].font}`
+
+  gCtx.textAlign = gMeme.lines[idx].align
+
   gCtx.textBaseline = 'middle'
   const { x, y } = setCoords(idx)
 
-  gCtx.fillText(text, x, y) // Draws (fills) a given text at the given (x, y) position.
-  gCtx.strokeText(text, x, y) // Draws (strokes) a given text at the given (x, y) position.
+  gCtx.fillText(text, x, y)
+  gCtx.strokeText(text, x, y)
+}
+function deleteLine() {
+  gMeme.lines[gMeme.selectedLineIdx].txt = ''
+}
+function setAlign(letter) {
+  if (letter === 'L') gMeme.lines[gMeme.selectedLineIdx].align = 'left'
+  else if (letter === 'C') gMeme.lines[gMeme.selectedLineIdx].align = 'center'
+  else if (letter === 'R') gMeme.lines[gMeme.selectedLineIdx].align = 'right'
+  return gMeme
+}
+function FontKindChanged(el) {
+  if (el === 'Impact') gMeme.lines[gMeme.selectedLineIdx].font = 'Impact'
+  else if (el === 'Arial') gMeme.lines[gMeme.selectedLineIdx].font = 'Arial'
+  else if (el === 'Verdana') gMeme.lines[gMeme.selectedLineIdx].font = 'Verdana'
 }
