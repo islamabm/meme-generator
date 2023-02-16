@@ -7,6 +7,7 @@ var gTrans = {
     en: ' text',
     he: 'טקסט',
   },
+
   'font-size-placeholder': {
     en: ' font size',
     he: 'גודל טקסט',

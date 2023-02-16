@@ -110,3 +110,14 @@
     grid-auto-flow: column;
   }
 } */
+@media (max-width: 800px) {
+  .canvas-page {
+    margin-left: 20px;
+    display: grid;
+    /* grid-auto-flow: column; */
+    gap: 30px;
+  }
+  .edit {
+    grid-row: 2;
+  }
+}

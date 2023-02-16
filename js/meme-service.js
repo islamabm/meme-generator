@@ -77,7 +77,7 @@ function setCoords(idx) {
     case 0:
       return { x: 150, y: 50 }
     case 1:
-      return { x: 150, y: 200 }
+      return { x: 150, y: 250 }
     default:
       return { x: 150, y: 100 }
   }
