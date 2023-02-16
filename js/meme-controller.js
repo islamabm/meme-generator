@@ -5,7 +5,7 @@ function init() {
   showGalleryPage()
   gElCanvas = document.getElementById('my-canvas')
   gCtx = gElCanvas.getContext('2d')
-
+  resizeCanvas()
   renderMeme()
 }
 
@@ -18,7 +18,7 @@ function renderMeme() {
   img.src = currImg.url
 
   img.onload = () => {
-    gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height) //img,x,y,xEnd,yEnd
+    gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
 
     gMeme.lines.forEach((line, idx) => {
       drawText(line.txt, idx)
@@ -69,11 +69,14 @@ function clearInput() {
   const elText = document.querySelector('input[name="image-text"]')
   elText.value = ''
 }
-// function onChangeFontKind(el) {
-//   console.log(el.value)
-// }
+
 function onFontKindChanged(el) {
   FontKindChanged(el)
   renderMeme()
   console.log(el)
+}
+function resizeCanvas() {
+  const elContainer = document.querySelector('.canvas-container')
+  gElCanvas.width = elContainer.offsetWidth
+  gElCanvas.height = elContainer.offsetHeight
 }

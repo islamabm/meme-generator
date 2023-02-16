@@ -42,7 +42,12 @@ function onFlexBtnClicke() {
   hideGalleryPage()
   // let meme = getMeme()
   let randomIdx = getRandomIntInclusive(0, gImgs.length - 1)
+  let randomText = getName()
+  let randomColor = getRandomColor()
+  let randomFont = getRandomFont()
+  let randomSize = getRandomIntInclusive(10, 30)
   setImg(randomIdx)
+
   renderMeme()
 }
 function onToggleMenu() {

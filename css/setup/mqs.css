@@ -33,9 +33,6 @@
 }
 
 @media (min-width: 600px) {
-  body {
-    background-color: green;
-  }
   .gallery-layout {
     display: grid;
     gap: 15px;
@@ -51,14 +48,8 @@
   }
 }
 @media (min-width: 880px) {
-  body {
-    background-color: rgb(14, 26, 185);
-  }
 }
 @media (min-width: 1060px) {
-  body {
-    background-color: rgb(230, 16, 148);
-  }
   .main-header .main-nav a:hover {
     box-shadow: inset 0 -6px 0 #58c93a;
   }
