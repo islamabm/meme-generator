@@ -3,18 +3,19 @@ canvas {
   margin: auto;
   background-color: white;
   border: 1px solid black;
+  height: 100%;
 }
 
 .canvas-container {
   background-color: brown;
   margin: auto;
-  width: 50vw;
-  height: 50vh;
+  width: 30vw;
+  /* height: 30vh; */
 }
 .canvas-page {
   display: grid;
   grid-auto-flow: column;
-  gap: 30px;
+  gap: 50px;
 }
 .edit {
   grid-column: 2;

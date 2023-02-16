@@ -1,3 +1,7 @@
+'use strict'
+
+var gCurrLang = 'en'
+
 var gTrans = {
   upload: {
     en: ' Upload Image from Canvas',
@@ -13,8 +17,6 @@ var gTrans = {
     he: 'גודל טקסט',
   },
 }
-
-var gCurrLang = 'en'
 
 function getTrans(transKey) {
   // DONE: if key is unknown return 'UNKNOWN'

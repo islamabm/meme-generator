@@ -1,6 +1,6 @@
 'use strict'
 renderGallery()
-// showGalleryPage()
+
 function renderGallery() {
   const images = getImages()
   let strHTMLs = images.map(

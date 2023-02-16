@@ -9,6 +9,7 @@ var gImgs = [
   { id: 4, url: 'img/4.jpg', keywords: ['hurry'] },
   { id: 5, url: 'img/5.jpg', keywords: ['cat'] },
 ]
+
 var gMeme = {
   selectedImgId: 5,
   selectedLineIdx: 0,
@@ -48,6 +49,7 @@ function getMeme() {
 function setLineTxt(newTxt) {
   gMeme.lines[gMeme.selectedLineIdx].txt = newTxt
 }
+
 function addEmojiToTwxt(emoji) {
   gMeme.lines[gMeme.selectedLineIdx].txt += emoji
 }
@@ -103,15 +105,18 @@ function drawText(text, idx) {
   gCtx.fillText(text, x, y)
   gCtx.strokeText(text, x, y)
 }
+
 function deleteLine() {
   gMeme.lines[gMeme.selectedLineIdx].txt = ''
 }
+
 function setAlign(letter) {
   if (letter === 'L') gMeme.lines[gMeme.selectedLineIdx].align = 'left'
   else if (letter === 'C') gMeme.lines[gMeme.selectedLineIdx].align = 'center'
   else if (letter === 'R') gMeme.lines[gMeme.selectedLineIdx].align = 'right'
   return gMeme
 }
+
 function FontKindChanged(el) {
   if (el === 'Impact') gMeme.lines[gMeme.selectedLineIdx].font = 'Impact'
   else if (el === 'Arial') gMeme.lines[gMeme.selectedLineIdx].font = 'Arial'

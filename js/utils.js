@@ -5,6 +5,7 @@ function getRandomIntInclusive(min, max) {
   max = Math.floor(max)
   return Math.floor(Math.random() * (max - min + 1)) + min //The maximum is inclusive and the minimum is inclusive
 }
+
 function getRandomColor() {
   const letters = '0123456789ABCDEF'
   let color = '#'
@@ -13,6 +14,7 @@ function getRandomColor() {
   }
   return color
 }
+
 function getName() {
   const words = [
     'puki love you',
@@ -24,6 +26,7 @@ function getName() {
   var word = words[wordIdx]
   return word
 }
+
 function getRandomFont() {
   const fonts = ['Impact', 'Arial', 'Verdana']
   var wordIdx = getRandomIntInclusive(0, fonts.length - 1)
