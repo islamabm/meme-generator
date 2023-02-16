@@ -8,14 +8,19 @@ canvas {
 .canvas-container {
   background-color: brown;
   margin: auto;
-  width: 60vw;
-  height: 60vh;
+  width: 50vw;
+  height: 50vh;
 }
-/* .canvas-page {
+.canvas-page {
   display: grid;
   grid-auto-flow: column;
   gap: 30px;
 }
 .edit {
   grid-column: 2;
-} */
+}
+.icon {
+  border: none;
+  background-color: white;
+  cursor: pointer;
+}

@@ -2,11 +2,11 @@
 
 function init() {
   doTrans()
-  showGalleryPage()
+
   gElCanvas = document.getElementById('my-canvas')
   gCtx = gElCanvas.getContext('2d')
   resizeCanvas()
-  renderMeme()
+  // renderMeme()
 }
 
 function renderMeme() {
@@ -31,6 +31,7 @@ function onChangeText(elInputText) {
   setLineTxt(elInputText)
   renderMeme()
 }
+
 function onChangeColor(color) {
   setcolor(gMeme, color)
   renderMeme()
@@ -49,22 +50,27 @@ function onSetLang(lang) {
   renderMeme()
   doTrans()
 }
+
 function onImogyBtnClicked(elEmoji) {
   addEmojiToTwxt(elEmoji.innerText)
   renderMeme()
 }
+
 function onDeleteLine() {
   deleteLine()
   renderMeme()
 }
+
 function onSetAlign(letter) {
   setAlign(letter)
   renderMeme()
 }
+
 function onChangeFont(num) {
   setFont(num)
   renderMeme()
 }
+
 function clearInput() {
   const elText = document.querySelector('input[name="image-text"]')
   elText.value = ''
@@ -75,6 +81,7 @@ function onFontKindChanged(el) {
   renderMeme()
   console.log(el)
 }
+
 function resizeCanvas() {
   const elContainer = document.querySelector('.canvas-container')
   gElCanvas.width = elContainer.offsetWidth

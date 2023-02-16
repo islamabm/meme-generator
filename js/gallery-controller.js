@@ -1,7 +1,6 @@
 'use strict'
-
 renderGallery()
-
+// showGalleryPage()
 function renderGallery() {
   const images = getImages()
   let strHTMLs = images.map(
@@ -19,37 +18,34 @@ function renderGallery() {
 
 function onImgSelect(id) {
   showCanvasPage()
-  hideGalleryPage()
 
   setImg(id)
   renderMeme()
 }
 
-function showCanvasPage() {
-  const elCanvasPage = document.querySelector('.canvas-page')
-  elCanvasPage.hidden = false
-}
-
-function showGalleryPage() {
-  document.querySelector('.gallery-container').classList.remove('hidden')
-}
-
-function hideGalleryPage() {
-  document.querySelector('.gallery-container').classList.add('hidden')
-}
 function onFlexBtnClicke() {
+  // showCanvasPage()
+  // hideGalleryPage()
   showCanvasPage()
-  hideGalleryPage()
   // let meme = getMeme()
   let randomIdx = getRandomIntInclusive(0, gImgs.length - 1)
-  let randomText = getName()
-  let randomColor = getRandomColor()
-  let randomFont = getRandomFont()
-  let randomSize = getRandomIntInclusive(10, 30)
+  // let randomText = getName()
+  // let randomColor = getRandomColor()
+  // let randomFont = getRandomFont()
+  // let randomSize = getRandomIntInclusive(10, 30)
   setImg(randomIdx)
 
   renderMeme()
 }
+
 function onToggleMenu() {
   document.body.classList.toggle('menu-open')
+}
+
+function showCanvasPage() {
+  document.querySelector('.gallery-container').classList.add('hidden')
+  document
+    .querySelector('.gallery-layout')
+    .classList.remove('gallery-container')
+  document.querySelector('.canvas-page').classList.remove('hidden')
 }
