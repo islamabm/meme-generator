@@ -6,9 +6,11 @@
 .main-layout > *:not(.full) {
   grid-column: 2;
 }
-
-.gallery-layout {
+.full {
+  grid-column: 1/-1;
+}
+/* .gallery-layout {
   display: grid;
   gap: 15px;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-}
+} */

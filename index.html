@@ -13,6 +13,7 @@
   </head>
 
   <body onload="init()" class="main-layout">
+    <div class="main-screen" onclick="onToggleMenu()"></div>
     <header class="main-header main-layout full">
       <section class="flex space-between align-center">
         <div class="logo white">LOGO</div>
@@ -24,6 +25,7 @@
             <li><a class="clean-link white" href="#">About</a></li>
           </ul>
         </nav>
+        <button type="button" onclick="onToggleMenu()">☰</button>
       </section>
     </header>
     <section class="gallery-container gallery-layout"></section>

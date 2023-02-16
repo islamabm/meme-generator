@@ -45,3 +45,6 @@ function onFlexBtnClicke() {
   setImg(randomIdx)
   renderMeme()
 }
+function onToggleMenu() {
+  document.body.classList.toggle('menu-open')
+}

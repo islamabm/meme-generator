@@ -1,17 +1,20 @@
 /* SETUP */
 @import 'setup/vars.css';
 @import 'setup/typography.css';
+@import 'setup/mqs.css';
 
 /* BASICS */
 @import 'basics/base.css';
 @import 'basics/layout.css';
 @import 'basics/helpers.css';
+@import 'basics/animations.css';
 
 /* COMPONENTS */
 @import 'components/canvas.css';
 @import 'components/section.css';
 @import 'components/gallery.css';
 @import 'components/header.css';
+@import 'components/screen.css';
 /* @import 'components/logo.css'; */
 /* @import 'components/card.css'; */
 /* @import 'components/newsletter.css'; */
