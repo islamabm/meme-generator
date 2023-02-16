@@ -3,11 +3,12 @@
 // let gSwitch = 0
 
 function init() {
+  doTrans()
   showGalleryPage()
   gElCanvas = document.getElementById('my-canvas')
   gCtx = gElCanvas.getContext('2d')
   // resizeCanvas()
-  doTranc()
+
   renderMeme()
   // onImgSelect()
   // onChangeText()
@@ -31,6 +32,7 @@ function renderMeme() {
       drawText(line.txt, idx)
       console.log(line)
     })
+    doTrans()
     // gCtx.font = `${gMeme.lines[gMeme.selectedLineIdx].size}px Arial`
     // gCtx.strokeStyle = `${gMeme.lines[gMeme.selectedLineIdx].color}`
   }
@@ -77,3 +79,15 @@ function onSwitchLine() {
 //   setLineTxt(elInputPrice.value)
 //   renderMeme()
 // }
+function onSetLang(lang) {
+  setLang(lang)
+
+  if (lang === 'he') document.body.classList.add('rtl')
+  else document.body.classList.remove('rtl')
+  renderMeme()
+  doTrans()
+}
+function onImogyBtnClicked(elEmoji) {
+  addEmojiToTwxt(elEmoji.innerText)
+  renderMeme()
+}

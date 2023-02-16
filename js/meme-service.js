@@ -46,7 +46,9 @@ function getMeme() {
 function setLineTxt(newTxt) {
   gMeme.lines[gMeme.selectedLineIdx].txt = newTxt
 }
-
+function addEmojiToTwxt(emoji) {
+  gMeme.lines[gMeme.selectedLineIdx].txt += emoji
+}
 // function addLine(meme, newTxt) {
 //   meme.lines[gMeme.selectedLineIdx].txt = newTxt
 // }

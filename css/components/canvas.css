@@ -11,3 +11,27 @@ canvas {
   width: 60vw;
   height: 60vh;
 }
+.canvas-page {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 30px;
+}
+.edit {
+  grid-column: 2;
+}
+.toolbar:hover {
+  animation: pulse 1s;
+}
+.toolbar1:hover {
+  animation: rubberBand 1s;
+}
+.toolbar2:hover {
+  animation: headShake 1s;
+}
+.toolbar,
+.toolbar1,
+.toolbar2 {
+  width: 40px;
+  height: 40px;
+  margin: 3px;
+}

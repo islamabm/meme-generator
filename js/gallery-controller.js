@@ -45,12 +45,3 @@ function onFlexBtnClicke() {
   setImg(randomIdx)
   renderMeme()
 }
-function onSetLang(lang) {
-  setLang(lang)
-  // const rtlLangs = ['he', 'ar']
-  // DONE: if lang is hebrew add RTL class to document.body
-  if (lang === 'he') document.body.classList.add('rtl')
-  else document.body.classList.remove('rtl')
-  renderBooks()
-  doTrans()
-}

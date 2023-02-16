@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>sprint 2</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
@@ -30,7 +38,7 @@
                   type="text"
                   class="text-input"
                   name="image-text"
-                  data-tranc="text-placeholder"
+                  data-trans="text-placeholder"
                   placeholder="text"
                   oninput="onChangeText(this.value)"
                 />
@@ -43,7 +51,7 @@
                   type="text"
                   class="font-input"
                   name="font-text"
-                  data-tranc="font-size-placeholder"
+                  data-trans="font-size-placeholder"
                   placeholder="font size"
                   oninput="onChangeTextFont(this.value)"
                 />
@@ -100,11 +108,61 @@
                 </button>
               </td>
             </tr>
-            <!-- <tr>
+            <tr>
               <td>
-                <i class="fa-solid fa-face-smile"></i>
+                <button
+                  onclick="onImogyBtnClicked(this)"
+                  class="animate__zoomInRight toolbar"
+                >
+                  😂
+                </button>
+
+                <button
+                  onclick="onImogyBtnClicked(this)"
+                  class="animate__zoomInRight toolbar"
+                >
+                  😃
+                  <!-- <i class="fa-regular fa-face-surprise"></i> -->
+                </button>
+
+                <button
+                  onclick="onImogyBtnClicked(this)"
+                  class="animate__zoomInRight toolbar1"
+                >
+                  😎
+                </button>
+                <button
+                  onclick="onImogyBtnClicked(this)"
+                  class="animate__zoomInRight toolbar"
+                >
+                  🙂
+                </button>
+                <button
+                  onclick="onImogyBtnClicked(this)"
+                  class="animate__zoomInRight toolbar2"
+                >
+                  😋
+                </button>
+                <button
+                  onclick="onImogyBtnClicked(this)"
+                  class="animate__zoomInRight toolbar2"
+                >
+                  🙄
+                </button>
+                <button
+                  onclick="onImogyBtnClicked(this)"
+                  class="animate__zoomInRight toolbar1"
+                >
+                  🥱
+                </button>
+                <button
+                  onclick="onImogyBtnClicked(this)"
+                  class="animate__zoomInRight toolbar1"
+                >
+                  🤯
+                </button>
               </td>
-            </tr> -->
+            </tr>
             <tr>
               <td>
                 <input
@@ -117,7 +175,7 @@
             </tr>
             <tr>
               <td>
-                <button class="btn" onclick="onUploadImg()" data-tranc="upload">
+                <button class="btn" onclick="onUploadImg()" data-trans="upload">
                   Upload Image from Canvas
                 </button>
               </td>
@@ -143,13 +201,13 @@
         ></canvas>
       </div>
     </section>
+
     <script src="js/utils.js"></script>
-    <script src="js/i18n.service.js"></script>
     <script src="js/upload.js"></script>
     <script src="js/sharing-on-facebook.js"></script>
     <script src="js/meme-service.js"></script>
     <script src="js/gallery-controller.js"></script>
-
     <script src="js/meme-controller.js"></script>
+    <script src="js/i18n.service.js"></script>
   </body>
 </html>
