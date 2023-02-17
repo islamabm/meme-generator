@@ -8,6 +8,13 @@ var gImgs = [
   { id: 3, url: 'img/3.jpg', keywords: ['cat'] },
   { id: 4, url: 'img/4.jpg', keywords: ['hurry'] },
   { id: 5, url: 'img/5.jpg', keywords: ['cat'] },
+  { id: 6, url: 'img/6.jpg', keywords: ['cat'] },
+  { id: 7, url: 'img/7.jpg', keywords: ['cat'] },
+  { id: 8, url: 'img/8.jpg', keywords: ['cat'] },
+  { id: 9, url: 'img/9.jpg', keywords: ['cat'] },
+  { id: 10, url: 'img/10.jpg', keywords: ['cat'] },
+  { id: 11, url: 'img/11jpg', keywords: ['cat'] },
+  { id: 12, url: 'img/12.jpg', keywords: ['cat'] },
 ]
 
 var gMeme = {
@@ -79,7 +86,7 @@ function setCoords(idx) {
     case 0:
       return { x: 150, y: 50 }
     case 1:
-      return { x: 150, y: 250 }
+      return { x: 150, y: 200 }
     default:
       return { x: 150, y: 100 }
   }

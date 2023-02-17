@@ -13,7 +13,18 @@
   </head>
 
   <body onload="init()" class="main-layout">
-    <div class="main-screen" onclick="onToggleMenu()"></div>
+    <!-- <ul class="menu">
+      <li><a class="menuItem" href="#">Home</a></li>
+      <li><a class="menuItem" href="#">Profile</a></li>
+      <li><a class="menuItem" href="#">About</a></li>
+      <li><a class="menuItem" href="#">Contacts</a></li>
+    </ul>
+    <button class="hamburger">
+      material icons https://material.io/resources/icons/
+      <i class="menuIcon material-icons">menu</i>
+      <i class="closeIcon material-icons">close</i>
+    </button> -->
+    <!-- <div class="main-screen" onclick="onToggleMenu()"></div> -->
     <header class="main-header main-layout full">
       <section class="flex space-between align-center">
         <div class="logo white">LOGO</div>
@@ -31,7 +42,7 @@
             </li>
           </ul>
         </nav>
-        <button type="button" onclick="onToggleMenu()">☰</button>
+        <!-- <button type="button" onclick="onToggleMenu()">☰</button> -->
       </section>
     </header>
     <section class="gallery-container gallery-layout"></section>
@@ -161,7 +172,7 @@
                 >
                   🙂
                 </button>
-                <hr />
+                <!-- <hr />
                 <button
                   onclick="onImogyBtnClicked(this)"
                   class="animate__zoomInRight toolbar2 icon"
@@ -187,30 +198,43 @@
                   🤯
                 </button>
               </td>
-            </tr>
-            <tr>
-              <td>
-                <input
-                  type="file"
-                  class="file-input btn"
-                  name="image"
-                  onchange="onImgInput(event)"
-                />
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <button class="btn" onclick="onUploadImg()" data-trans="upload">
-                  Upload Image from Canvas
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <select onchange="onSetLang(this.value)">
-                  <option value="en">English</option>
-                  <option value="he">עברית</option>
-                </select>
+            </tr> -->
+                <tr>
+                  <td>
+                    <input
+                      type="file"
+                      class="file-input btn"
+                      name="image"
+                      onchange="onImgInput(event)"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <button
+                      class="btn"
+                      onclick="onUploadImg()"
+                      data-trans="upload"
+                    >
+                      Upload Image from Canvas
+                    </button>
+                    <a
+                      href="#"
+                      class="btn"
+                      onclick="downloadImg(this)"
+                      download="my-img.jpg"
+                      >Download</a
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <select onchange="onSetLang(this.value)">
+                      <option value="en">English</option>
+                      <option value="he">עברית</option>
+                    </select>
+                  </td>
+                </tr>
               </td>
             </tr>
           </table>
@@ -229,6 +253,7 @@
 
     <script src="js/utils.js"></script>
     <script src="js/upload.js"></script>
+    <script src="js/download.js"></script>
     <script src="js/sharing-on-facebook.js"></script>
     <script src="js/meme-service.js"></script>
     <script src="js/gallery-controller.js"></script>

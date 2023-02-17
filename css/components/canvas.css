@@ -10,12 +10,12 @@ canvas {
   background-color: brown;
   margin: auto;
   width: 30vw;
-  /* height: 30vh; */
+  height: 40vh;
 }
 .canvas-page {
   display: grid;
   grid-auto-flow: column;
-  gap: 50px;
+  gap: 5px;
 }
 .edit {
   grid-column: 2;

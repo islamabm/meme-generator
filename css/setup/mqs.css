@@ -68,54 +68,71 @@
     grid-template-columns: 1fr;
   }
 } */
-@media (min-width: 1060px) {
+/* @media (min-width: 1060px) {
   .main-header .main-nav a:hover {
     box-shadow: inset 0 -6px 0 #58c93a;
   }
-}
-/* @media (max-width: 1060px) {
-  .gallery-layout {
-    display: grid;
-    gap: 15px;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
 } */
-/* @media (max-width: 880px) {
-  .gallery-layout {
+
+@media (max-width: 1300px) {
+  .gallery-container {
     display: grid;
+    grid-template-columns: repeat(4, minmax(180px, 1fr));
     gap: 15px;
+  }
+}
+@media (max-width: 880px) {
+  .gallery-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  /* .gallery-layout {
+    grid-template-columns: 1fr 1fr 1fr;
+  } */
+  .main-layout > *:not(.full) {
+    grid-column: 2;
+  }
+}
+@media (max-width: 700px) {
+  .gallery-container {
     grid-template-columns: 1fr 1fr;
+  }
+  /* .gallery-layout {
+    grid-template-columns: 1fr 1fr 1fr;
+  } */
+  .main-layout > *:not(.full) {
+    grid-column: 2;
+  }
+}
+/* @media (max-width: 600px) {
+  .gallery-container {
+    grid-template-columns: 1fr;
+  }
+  .gallery-layout {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .main-layout > *:not(.full) {
+    grid-column: 2;
   }
 } */
 
-/* @media (max-width: 1200px) {
-  .gallery-container {
+/* @media (max-width: 1000px) {
+  .canvas-page {
     display: grid;
-    gap: 15px;
-    grid-template-columns: 1fr 1fr;
-  }
-} */
-/* @media (max-width: 600px) {
-  .gallery-container {
-    display: grid;
-    gap: 15px;
-    grid-template-columns: 1fr 1fr;
-  }
-} */
-/* @media (min-width: 600px) {
-  .gallery-container {
-    display: grid;
-     gap: 15px;
-    grid-template-columns: 1fr 1fr;  
     grid-auto-flow: column;
+    gap: 5px;
+  }
+  .edit {
+    grid-column: 2;
   }
 } */
 @media (max-width: 800px) {
   .canvas-page {
-    margin-left: 20px;
     display: grid;
-    /* grid-auto-flow: column; */
-    /* gap: 30px; */
+    grid-auto-flow: row;
+    gap: 0px;
+  }
+  .canvas-container {
+    grid-row: 1;
   }
   .edit {
     grid-row: 2;

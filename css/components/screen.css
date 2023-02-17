@@ -1,4 +1,4 @@
-.main-screen {
+/* .main-screen {
   position: absolute;
   top: 0;
   left: 0;
@@ -13,4 +13,4 @@
 body.main-open .main-screen {
   opacity: 1;
   pointer-events: auto;
-}
+} */

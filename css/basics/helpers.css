@@ -20,12 +20,19 @@
 .flex.align-center {
   align-items: center;
 }
+
 .full {
   grid-column: 1 / -1;
 }
+
 .hidden {
   display: none;
 }
+
 .outline {
   outline: 2px solid black;
+}
+
+.white {
+  color: white;
 }
