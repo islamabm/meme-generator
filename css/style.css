@@ -9,6 +9,8 @@
 @import 'basics/helpers.css';
 @import 'basics/animations.css';
 
+@import 'behaviours/header.css';
+
 /* COMPONENTS */
 @import 'components/canvas.css';
 @import 'components/section.css';

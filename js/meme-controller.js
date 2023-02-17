@@ -87,10 +87,26 @@ function resizeCanvas() {
   gElCanvas.width = elContainer.offsetWidth
   gElCanvas.height = elContainer.offsetHeight
 }
+
+// function onSaveMeme() {
+//   const meme = getMeme()
+//   console.log(meme)
+//   saveMeme(meme)
+// }
 function onSaveMeme() {
-  const meme = getMeme()
-  saveMeme(meme)
+  saveMeme()
 }
+
 function onMemeClicked() {
-  memeClicked()
+  document.querySelector('.gallery-container').classList.add('hidden')
+  document.querySelector('.canvas-page').classList.add('hidden')
+  document.querySelector('.meme-Gallery').classList.remove('hidden')
+  renderMemesGallery()
+}
+
+function onGalleryClicked() {
+  document.querySelector('.gallery-container').classList.remove('hidden')
+  document.querySelector('.canvas-page').classList.add('hidden')
+  document.querySelector('.meme-Gallery').classList.add('hidden')
+  renderGallery()
 }

@@ -32,7 +32,9 @@
         <nav class="main-nav">
           <ul class="main-menu clean-list flex">
             <li>
-              <a class="clean-link white" href="#">Gallery</a>
+              <a class="clean-link white" href="#" onclick="onGalleryClicked()"
+                >Gallery</a
+              >
             </li>
             <li>
               <a class="clean-link white" href="#" onclick="onMemeClicked()"
@@ -48,6 +50,7 @@
       </section>
     </header>
     <section class="gallery-container gallery-layout"></section>
+    <section class="meme-Gallery gallery-container hidden"></section>
 
     <section class="canvas-page hidden">
       <section class="edit">
@@ -209,7 +212,9 @@
                       name="image"
                       onchange="onImgInput(event)"
                     />
-                    <button type="button" onclick="onSaveMeme()">Save</button>
+                    <button type="button" onclick="onSaveMeme(this)">
+                      Save
+                    </button>
                   </td>
                 </tr>
                 <tr>

@@ -129,9 +129,12 @@ function FontKindChanged(el) {
   else if (el === 'Arial') gMeme.lines[gMeme.selectedLineIdx].font = 'Arial'
   else if (el === 'Verdana') gMeme.lines[gMeme.selectedLineIdx].font = 'Verdana'
 }
-function saveMeme(meme) {
-  saveToStorage('memeDB', meme)
+
+function saveMeme() {
+  saveToStorage('memeDB', gMeme)
+  // console.log(meme)
 }
-function memeClicked() {
-  loadFromStorage('memeDB')
-}
+
+// function memeClicked() {
+//   loadFromStorage('memeDB')
+// }
