@@ -35,7 +35,9 @@
               <a class="clean-link white" href="#">Gallery</a>
             </li>
             <li>
-              <a class="clean-link white" href="#">Memes</a>
+              <a class="clean-link white" href="#" onclick="onMemeClicked()"
+                >Memes</a
+              >
             </li>
             <li>
               <a class="clean-link white" href="#">About</a>
@@ -207,6 +209,7 @@
                       name="image"
                       onchange="onImgInput(event)"
                     />
+                    <button type="button" onclick="onSaveMeme()">Save</button>
                   </td>
                 </tr>
                 <tr>

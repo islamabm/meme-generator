@@ -87,3 +87,10 @@ function resizeCanvas() {
   gElCanvas.width = elContainer.offsetWidth
   gElCanvas.height = elContainer.offsetHeight
 }
+function onSaveMeme() {
+  const meme = getMeme()
+  saveMeme(meme)
+}
+function onMemeClicked() {
+  memeClicked()
+}
