@@ -9,8 +9,6 @@
 @import 'basics/helpers.css';
 @import 'basics/animations.css';
 
-@import 'behaviours/header.css';
-
 /* COMPONENTS */
 @import 'components/canvas.css';
 @import 'components/section.css';
@@ -18,6 +16,7 @@
 @import 'components/header.css';
 @import 'components/screen.css';
 @import 'components/hamburger.css';
+@import 'components/filter-keys.css';
 /* @import 'components/logo.css'; */
 /* @import 'components/card.css'; */
 /* @import 'components/newsletter.css'; */

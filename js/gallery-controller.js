@@ -2,18 +2,53 @@
 renderGallery()
 
 function renderGallery() {
-  const images = getImages()
-  let strHTMLs = images.map(
-    (img, idx) =>
-      `<img class="gallery-img" src="img/${idx + 1}.jpg" onclick="onImgSelect(${
-        img.id
-      })" />`
-  )
-  strHTMLs.push(
-    `<button onclick="onFlexBtnClicke()" calss="felx">i am flexible</button>`
-  )
+  if (!getFilterImages() || !getFilterImages().length) {
+    const images = getImages()
+    let strHTMLs = images.map(
+      (img, idx) =>
+        `<img class="gallery-img" src="img/${
+          idx + 1
+        }.jpg" onclick="onImgSelect(${img.id})" />`
+    )
+    strHTMLs.push(
+      `<button onclick="onFlexBtnClicke()" class="flex">i am flexible</button>`
+    )
 
-  document.querySelector('.gallery-container').innerHTML = strHTMLs.join('')
+    document.querySelector('.gallery-container').innerHTML = strHTMLs.join('')
+  } else {
+    const images = getFilterImages()
+    let strHTMLs = images.map(
+      (img) =>
+        `<img class="gallery-img" src="img/${img.id}.jpg" onclick="onImgSelect(${img.id})" />`
+    )
+    strHTMLs.push(
+      `<button onclick="onFlexBtnClicke()" class="flex">i am flexible</button>`
+    )
+
+    document.querySelector('.gallery-container').innerHTML = strHTMLs.join('')
+  }
+}
+
+function onSetFilterBy(filterBy) {
+  console.log(filterBy)
+  filterBy = setFilterBy(filterBy)
+  renderGallery()
+
+  if (filterBy.word === 'actor') {
+    var elSpan = document.querySelector('.span1')
+    gFont1 += 15
+    elSpan.style.fontSize = gFont1 + 'px'
+  }
+  if (filterBy.word === 'animals') {
+    var elSpan = document.querySelector('.span2')
+    gFont2 += 15
+    elSpan.style.fontSize = gFont2 + 'px'
+  }
+  if (filterBy.word === 'kids') {
+    var elSpan = document.querySelector('.span3')
+    gFont3 += 15
+    elSpan.style.fontSize = gFont3 + 'px'
+  }
 }
 
 function onImgSelect(id) {
@@ -21,6 +56,7 @@ function onImgSelect(id) {
 
   setImg(id)
   renderMeme()
+  document.querySelector('.filter-vendor-select').classList.add('hidden')
 }
 
 function onFlexBtnClicke() {
@@ -38,11 +74,13 @@ function onFlexBtnClicke() {
   renderMeme()
 }
 
-// function onToggleMenu() {
-//   document.body.classList.toggle('menu-open')
-// }
+function onToggleMenu() {
+  document.body.classList.toggle('menu-open')
+}
 
 function showCanvasPage() {
+  document.querySelector('.filter-vendor-select').classList.add('hidden')
+  document.querySelector('.filters-keys').classList.add('hidden')
   document.querySelector('.gallery-container').classList.add('hidden')
   document
     .querySelector('.gallery-layout')
@@ -50,10 +88,27 @@ function showCanvasPage() {
   document.querySelector('.canvas-page').classList.remove('hidden')
 }
 
-function renderMemesGallery() {
-  const images = loadFromStorage('memeDB')
-  console.log(images)
-  let strHTMLs = `<img class="gallery-img" src="img/${images.selectedImgId}.jpg"/>`
+function renderSavedMemes() {
+  let memes = loadFromStorage('memeDB')
+  let strHTMLs = memes.map((meme) => `<img class="gallery-img" src="${meme}"/>`)
 
-  document.querySelector('.meme-Gallery').innerHTML = strHTMLs
+  document.querySelector('.memes-gallery').innerHTML = strHTMLs.join('')
+}
+
+function onMemesClicked() {
+  document.querySelector('.filters-keys').classList.add('hidden')
+  document.querySelector('.filter-vendor-select').classList.add('hidden')
+  document.querySelector('.gallery-container').classList.add('hidden')
+  document.querySelector('.canvas-page').classList.add('hidden')
+  renderSavedMemes()
+  document.querySelector('.memes-gallery').classList.remove('hidden')
+}
+
+function onGalleryClicked() {
+  document.querySelector('.filter-vendor-select').classList.remove('hidden')
+  document.querySelector('.memes-gallery').classList.add('hidden')
+  document.querySelector('.canvas-page').classList.add('hidden')
+  renderGallery()
+  document.querySelector('.gallery-container').classList.remove('hidden')
+  document.querySelector('.filters-keys').classList.remove('hidden')
 }

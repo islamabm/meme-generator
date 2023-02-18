@@ -9,3 +9,6 @@
   grid-template-columns: repeat(4, minmax(180px, 1fr));
   gap: 15px;
 } */
+.filter-vendor-select {
+  width: 200px;
+}

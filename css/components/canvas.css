@@ -11,7 +11,6 @@ canvas {
   margin: auto;
   width: 30vw;
   height: 40vh;
-  /* width: 100%; */
 }
 .canvas-page {
   display: grid;

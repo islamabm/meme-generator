@@ -30,6 +30,7 @@ function renderMeme() {
 function onChangeText(elInputText) {
   setLineTxt(elInputText)
   renderMeme()
+  return elInputText
 }
 
 function onChangeColor(color) {
@@ -88,25 +89,25 @@ function resizeCanvas() {
   gElCanvas.height = elContainer.offsetHeight
 }
 
-// function onSaveMeme() {
-//   const meme = getMeme()
-//   console.log(meme)
-//   saveMeme(meme)
-// }
-function onSaveMeme() {
+function onSaveMemes() {
   saveMeme()
 }
 
-function onMemeClicked() {
-  document.querySelector('.gallery-container').classList.add('hidden')
-  document.querySelector('.canvas-page').classList.add('hidden')
-  document.querySelector('.meme-Gallery').classList.remove('hidden')
-  renderMemesGallery()
+function onNextPage(num) {
+  changePage(num)
+  renderImojis()
 }
 
-function onGalleryClicked() {
-  document.querySelector('.gallery-container').classList.remove('hidden')
-  document.querySelector('.canvas-page').classList.add('hidden')
-  document.querySelector('.meme-Gallery').classList.add('hidden')
-  renderGallery()
+renderImojis()
+function renderImojis() {
+  let imojes = getImojes()
+
+  let strHtmls = []
+  imojes.forEach((imoji) =>
+    strHtmls.push(
+      `<button onclick="onImogyBtnClicked(this)" class="animate__zoomInRight toolbar icon">${imoji}</button>`
+    )
+  )
+
+  document.querySelector('.imaji-container').innerHTML = strHtmls.join('')
 }

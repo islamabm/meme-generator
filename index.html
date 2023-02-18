@@ -13,18 +13,6 @@
   </head>
 
   <body onload="init()" class="main-layout">
-    <!-- <ul class="menu">
-      <li><a class="menuItem" href="#">Home</a></li>
-      <li><a class="menuItem" href="#">Profile</a></li>
-      <li><a class="menuItem" href="#">About</a></li>
-      <li><a class="menuItem" href="#">Contacts</a></li>
-    </ul>
-    <button class="hamburger">
-      material icons https://material.io/resources/icons/
-      <i class="menuIcon material-icons">menu</i>
-      <i class="closeIcon material-icons">close</i>
-    </button> -->
-    <!-- <div class="main-screen" onclick="onToggleMenu()"></div> -->
     <header class="main-header main-layout full">
       <section class="flex space-between align-center">
         <div class="logo white">LOGO</div>
@@ -32,12 +20,12 @@
         <nav class="main-nav">
           <ul class="main-menu clean-list flex">
             <li>
-              <a class="clean-link white" href="#" onclick="onGalleryClicked()"
+              <a onclick="onGalleryClicked()" class="clean-link white" href="#"
                 >Gallery</a
               >
             </li>
             <li>
-              <a class="clean-link white" href="#" onclick="onMemeClicked()"
+              <a onclick="onMemesClicked()" class="clean-link white" href="#"
                 >Memes</a
               >
             </li>
@@ -49,9 +37,22 @@
         <!-- <button type="button" onclick="onToggleMenu()">☰</button> -->
       </section>
     </header>
+    <div class="filters-keys">
+      <span class="key-span span1">actor</span>
+      <span class="key-span span2">animals</span>
+      <span class="key-span span3">kids</span>
+    </div>
+    <select
+      class="filter-vendor-select"
+      onchange="onSetFilterBy({word: this.value})"
+    >
+      <option value="">Select word</option>
+      <option value="actor">actor</option>
+      <option value="animals">animals</option>
+      <option value="kids">kids</option>
+    </select>
     <section class="gallery-container gallery-layout"></section>
-    <section class="meme-Gallery gallery-container hidden"></section>
-
+    <section class="gallery-container memes-gallery hidden"></section>
     <section class="canvas-page hidden">
       <section class="edit">
         <div class="inputs">
@@ -148,36 +149,34 @@
                 </datalist>
               </td>
             </tr>
-
+            <tr>
+              <td>
+                <button class="prev" onclick="onNextPage(-1)"><<</button>
+                <div class="imaji-container"></div>
+                <button class="next" onclick="onNextPage(1)">>></button>
+              </td>
+            </tr>
             <tr>
               <td>
                 <button
                   onclick="onImogyBtnClicked(this)"
                   class="animate__zoomInRight toolbar icon"
-                >
-                  😂
-                </button>
+                ></button>
 
                 <button
                   onclick="onImogyBtnClicked(this)"
                   class="animate__zoomInRight toolbar icon"
-                >
-                  😃
-                </button>
+                ></button>
 
                 <button
                   onclick="onImogyBtnClicked(this)"
                   class="animate__zoomInRight toolbar1 icon"
-                >
-                  😎
-                </button>
+                ></button>
                 <button
                   onclick="onImogyBtnClicked(this)"
                   class="animate__zoomInRight toolbar icon"
-                >
-                  🙂
-                </button>
-                <!-- <hr />
+                ></button>
+                <!--  
                 <button
                   onclick="onImogyBtnClicked(this)"
                   class="animate__zoomInRight toolbar2 icon"
@@ -203,7 +202,7 @@
                   🤯
                 </button>
               </td>
-            </tr> -->
+            </tr>  -->
                 <tr>
                   <td>
                     <input
@@ -212,9 +211,6 @@
                       name="image"
                       onchange="onImgInput(event)"
                     />
-                    <button type="button" onclick="onSaveMeme(this)">
-                      Save
-                    </button>
                   </td>
                 </tr>
                 <tr>
@@ -233,6 +229,11 @@
                       download="my-img.jpg"
                       >Download</a
                     >
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <button onclick="onSaveMemes()">Save</button>
                   </td>
                 </tr>
                 <tr>
