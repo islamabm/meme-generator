@@ -6,6 +6,7 @@ function init() {
   gElCanvas = document.getElementById('my-canvas')
   gCtx = gElCanvas.getContext('2d')
   resizeCanvas()
+
   // renderMeme()
 }
 
@@ -35,6 +36,10 @@ function onChangeText(elInputText) {
 
 function onChangeColor(color) {
   setcolor(gMeme, color)
+  renderMeme()
+}
+function onChangeFillTextColor(color) {
+  setFillcolor(gMeme, color)
   renderMeme()
 }
 
@@ -80,7 +85,6 @@ function clearInput() {
 function onFontKindChanged(el) {
   FontKindChanged(el)
   renderMeme()
-  console.log(el)
 }
 
 function resizeCanvas() {
@@ -110,4 +114,11 @@ function renderImojis() {
   )
 
   document.querySelector('.imaji-container').innerHTML = strHtmls.join('')
+}
+
+function onAddLine() {
+  clearInput()
+  addLine()
+  console.log(gMeme.lines)
+  renderMeme()
 }

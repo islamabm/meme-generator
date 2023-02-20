@@ -15,7 +15,7 @@
   <body onload="init()" class="main-layout">
     <header class="main-header main-layout full">
       <section class="flex space-between align-center">
-        <div class="logo white">LOGO</div>
+        <div class="logo white">Meme Generator</div>
         <div type="button" class="toggle-menu"></div>
         <nav class="main-nav">
           <ul class="main-menu clean-list flex">
@@ -34,14 +34,21 @@
             </li>
           </ul>
         </nav>
+
         <!-- <button type="button" onclick="onToggleMenu()">☰</button> -->
       </section>
     </header>
+    <!-- <select class="switch-lang" onchange="onSetLang(this.value)">
+      <option value="en">English</option>
+      <option value="he">עברית</option>
+    </select> -->
     <div class="filters-keys">
       <span class="key-span span1">actor</span>
       <span class="key-span span2">animals</span>
       <span class="key-span span3">kids</span>
     </div>
+    <button onclick="onFlexBtnClicke()" class="flex-btn">i am flexible</button>
+
     <select
       class="filter-vendor-select"
       onchange="onSetFilterBy({word: this.value})"
@@ -52,211 +59,181 @@
       <option value="kids">kids</option>
     </select>
     <section class="gallery-container gallery-layout"></section>
-    <section class="gallery-container memes-gallery hidden"></section>
+    <section class="memes-gallery hidden"></section>
     <section class="canvas-page hidden">
       <section class="edit">
-        <div class="inputs">
-          <table>
-            <tr>
-              <td>
-                <input
-                  type="text"
-                  class="text-input"
-                  name="image-text"
-                  data-trans="text-placeholder"
-                  placeholder="text"
-                  oninput="onChangeText(this.value)"
+        <!-- <div class="inputs"> -->
+        <table>
+          <tr>
+            <td>
+              <input
+                type="text"
+                class="text-input"
+                name="image-text"
+                data-trans="text-placeholder"
+                placeholder="text"
+                oninput="onChangeText(this.value)"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input
+                title="stroke color"
+                type="color"
+                class="color-input"
+                name="text-color"
+                oninput="onChangeColor(this.value)"
+              />
+
+              <input
+                title="fill color"
+                type="color"
+                class="color-fill-input"
+                name="text-color"
+                oninput="onChangeFillTextColor(this.value)"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <button>
+                <img
+                  title="switch line"
+                  onclick="onSwitchLine()"
+                  src="ICONS/up-and-down-opposite-double-arrows-side-by-side.png"
+                  alt=""
                 />
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <input
-                  type="color"
-                  class="color-input"
-                  name="text-color"
-                  oninput="onChangeColor(this.value)"
+              </button>
+              <button>
+                <img
+                  title="add line"
+                  onclick="onAddLine()"
+                  src="ICONS/add.png"
+                  alt=""
                 />
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <button>
-                  <img
-                    onclick="onSwitchLine()"
-                    src="ICONS/up-and-down-opposite-double-arrows-side-by-side.png"
-                    alt=""
-                  />
-                </button>
-                <button>
-                  <img onclick="onAddLine()" src="ICONS/add.png" alt="" />
-                </button>
-                <button>
-                  <img src="ICONS/trash.png" alt="" onclick="onDeleteLine()" />
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <button onclick="onChangeFont(5)">
-                  <img src="ICONS/increase font - icon.png" alt="" />
-                </button>
-                <button onclick="onChangeFont(-5)">
-                  <img src="ICONS/decrease font - icon.png" alt="" />
-                </button>
-                <button>
-                  <img
-                    onclick="onSetAlign('L')"
-                    src="ICONS/align-to-left.png"
-                    alt=""
-                  />
-                </button>
-                <button>
-                  <img
-                    onclick="onSetAlign('C')"
-                    src="ICONS/center-text-alignment.png"
-                    alt=""
-                  />
-                </button>
-                <button>
-                  <img
-                    onclick="onSetAlign('R')"
-                    src="ICONS/align-to-right.png"
-                    alt=""
-                  />
-                </button>
-              </td>
-            </tr>
-            <tr>
+              </button>
+              <button>
+                <img src="ICONS/trash.png" alt="" onclick="onDeleteLine()" />
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <button onclick="onChangeFont(5)">
+                <img src="ICONS/increase font - icon.png" alt="" />
+              </button>
+              <button onclick="onChangeFont(-5)">
+                <img src="ICONS/decrease font - icon.png" alt="" />
+              </button>
+              <button>
+                <img
+                  onclick="onSetAlign('L')"
+                  src="ICONS/align-to-left.png"
+                  alt=""
+                />
+              </button>
+              <button>
+                <img
+                  onclick="onSetAlign('C')"
+                  src="ICONS/center-text-alignment.png"
+                  alt=""
+                />
+              </button>
+              <button>
+                <img
+                  onclick="onSetAlign('R')"
+                  src="ICONS/align-to-right.png"
+                  alt=""
+                />
+              </button>
+            </td>
+          </tr>
+          <!-- <tr>
               <td>
                 <button><img src="ICONS/text stroke.png" alt="" /></button>
                 <button>
                   <img src="ICONS/paint-board-and-brush.png" alt="" />
                 </button>
               </td>
-            </tr>
-            <tr>
-              <td>
-                <input
-                  id="data1"
-                  list="data"
-                  oninput="onFontKindChanged(this.value)"
-                />
-                <datalist id="data">
-                  <option value="Impact"></option>
-                  <option value="Arial"></option>
-                  <option value="Verdana"></option>
-                </datalist>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <button class="prev" onclick="onNextPage(-1)"><<</button>
-                <div class="imaji-container"></div>
-                <button class="next" onclick="onNextPage(1)">>></button>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <button
-                  onclick="onImogyBtnClicked(this)"
-                  class="animate__zoomInRight toolbar icon"
-                ></button>
+            </tr> -->
+          <tr>
+            <td>
+              <input
+                id="data1"
+                list="data"
+                oninput="onFontKindChanged(this.value)"
+              />
+              <datalist id="data">
+                <option value="Impact"></option>
+                <option value="Arial"></option>
+                <option value="Verdana"></option>
+              </datalist>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <button
+                title="prev page imoje"
+                class="prev"
+                onclick="onNextPage(-1)"
+              >
+                <<
+              </button>
+              <div class="imaji-container"></div>
+              <button
+                title="next page imoje"
+                class="next"
+                onclick="onNextPage(1)"
+              >
+                >>
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <tr>
+                <td>
+                  <input
+                    type="file"
+                    class="file-input btn"
+                    name="image"
+                    onchange="onImgInput(event)"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <button
+                    class="btn"
+                    onclick="onUploadImg()"
+                    data-trans="upload"
+                  >
+                    Upload Image from Canvas
+                  </button>
+                  <a
+                    href="#"
+                    class="btn"
+                    onclick="downloadImg(this)"
+                    download="my-img.jpg"
+                    >Download</a
+                  >
+                </td>
+              </tr>
+              <!-- <tr>
+                <td>
+                  <button class="save" onclick="onSaveMemes()">Save</button>
+                </td>
+              </tr> -->
+            </td>
+          </tr>
+        </table>
 
-                <button
-                  onclick="onImogyBtnClicked(this)"
-                  class="animate__zoomInRight toolbar icon"
-                ></button>
-
-                <button
-                  onclick="onImogyBtnClicked(this)"
-                  class="animate__zoomInRight toolbar1 icon"
-                ></button>
-                <button
-                  onclick="onImogyBtnClicked(this)"
-                  class="animate__zoomInRight toolbar icon"
-                ></button>
-                <!--  
-                <button
-                  onclick="onImogyBtnClicked(this)"
-                  class="animate__zoomInRight toolbar2 icon"
-                >
-                  😋
-                </button>
-                <button
-                  onclick="onImogyBtnClicked(this)"
-                  class="animate__zoomInRight toolbar2 icon"
-                >
-                  🙄
-                </button>
-                <button
-                  onclick="onImogyBtnClicked(this)"
-                  class="animate__zoomInRight toolbar1 icon"
-                >
-                  🥱
-                </button>
-                <button
-                  onclick="onImogyBtnClicked(this)"
-                  class="animate__zoomInRight toolbar1 icon"
-                >
-                  🤯
-                </button>
-              </td>
-            </tr>  -->
-                <tr>
-                  <td>
-                    <input
-                      type="file"
-                      class="file-input btn"
-                      name="image"
-                      onchange="onImgInput(event)"
-                    />
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <button
-                      class="btn"
-                      onclick="onUploadImg()"
-                      data-trans="upload"
-                    >
-                      Upload Image from Canvas
-                    </button>
-                    <a
-                      href="#"
-                      class="btn"
-                      onclick="downloadImg(this)"
-                      download="my-img.jpg"
-                      >Download</a
-                    >
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <button onclick="onSaveMemes()">Save</button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <select onchange="onSetLang(this.value)">
-                      <option value="en">English</option>
-                      <option value="he">עברית</option>
-                    </select>
-                  </td>
-                </tr>
-              </td>
-            </tr>
-          </table>
-        </div>
+        <!-- </div> -->
       </section>
 
       <div class="canvas-container">
-        <canvas
-          id="my-canvas"
-          width="300"
-          height="300"
-          style="outline: 1px solid green"
-        ></canvas>
+        <canvas id="my-canvas" width="300" height="300"></canvas>
       </div>
     </section>
 

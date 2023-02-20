@@ -14,3 +14,18 @@
 .main-header a:hover {
   color: red;
 }
+.flex-btn,
+.switch-lang {
+  /* position: absolute;
+  right: 0; */
+  margin-inline-start: auto;
+  width: 200px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  border-radius: 555px;
+  background-color: blueviolet;
+}
+
+.switch-lang {
+  color: white;
+}

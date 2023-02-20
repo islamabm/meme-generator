@@ -10,9 +10,6 @@ function renderGallery() {
           idx + 1
         }.jpg" onclick="onImgSelect(${img.id})" />`
     )
-    strHTMLs.push(
-      `<button onclick="onFlexBtnClicke()" class="flex">i am flexible</button>`
-    )
 
     document.querySelector('.gallery-container').innerHTML = strHTMLs.join('')
   } else {
@@ -20,9 +17,6 @@ function renderGallery() {
     let strHTMLs = images.map(
       (img) =>
         `<img class="gallery-img" src="img/${img.id}.jpg" onclick="onImgSelect(${img.id})" />`
-    )
-    strHTMLs.push(
-      `<button onclick="onFlexBtnClicke()" class="flex">i am flexible</button>`
     )
 
     document.querySelector('.gallery-container').innerHTML = strHTMLs.join('')
@@ -60,32 +54,18 @@ function onImgSelect(id) {
 }
 
 function onFlexBtnClicke() {
-  // showCanvasPage()
-  // hideGalleryPage()
   showCanvasPage()
-  // let meme = getMeme()
+
   let randomIdx = getRandomIntInclusive(0, gImgs.length - 1)
-  // let randomText = getName()
-  // let randomColor = getRandomColor()
-  // let randomFont = getRandomFont()
-  // let randomSize = getRandomIntInclusive(10, 30)
+
   setImg(randomIdx)
 
   renderMeme()
+  // document.querySelector('.switch-lang').classList.add('hidden')
 }
 
 function onToggleMenu() {
   document.body.classList.toggle('menu-open')
-}
-
-function showCanvasPage() {
-  document.querySelector('.filter-vendor-select').classList.add('hidden')
-  document.querySelector('.filters-keys').classList.add('hidden')
-  document.querySelector('.gallery-container').classList.add('hidden')
-  document
-    .querySelector('.gallery-layout')
-    .classList.remove('gallery-container')
-  document.querySelector('.canvas-page').classList.remove('hidden')
 }
 
 function renderSavedMemes() {
@@ -95,20 +75,42 @@ function renderSavedMemes() {
   document.querySelector('.memes-gallery').innerHTML = strHTMLs.join('')
 }
 
-function onMemesClicked() {
-  document.querySelector('.filters-keys').classList.add('hidden')
+function showCanvasPage() {
+  document.querySelector('.flex-btn').classList.add('hidden')
   document.querySelector('.filter-vendor-select').classList.add('hidden')
+  document.querySelector('.filters-keys').classList.add('hidden')
   document.querySelector('.gallery-container').classList.add('hidden')
-  document.querySelector('.canvas-page').classList.add('hidden')
-  renderSavedMemes()
-  document.querySelector('.memes-gallery').classList.remove('hidden')
+  document.querySelector('.memes-gallery').classList.add('hidden')
+  document.querySelector('.canvas-page').classList.remove('hidden')
 }
 
+// function onMemesClicked() {
+//   removeGalleryBtn()
+//   document.querySelector('.gallery-container').classList.add('hidden')
+//   document.querySelector('.canvas-page').classList.add('hidden')
+//   document.querySelector('.canvas-page').classList.remove('canvas-page')
+//   document.querySelector('.memes-gallery').classList.remove('hidden')
+//   renderSavedMemes()
+// }
+
 function onGalleryClicked() {
-  document.querySelector('.filter-vendor-select').classList.remove('hidden')
-  document.querySelector('.memes-gallery').classList.add('hidden')
+  // document.querySelector('.memes-gallery').classList.add('hidden')
   document.querySelector('.canvas-page').classList.add('hidden')
-  renderGallery()
+  document.querySelector('.canvas-page').classList.remove('canvas-page')
+  addGalleryBtns()
   document.querySelector('.gallery-container').classList.remove('hidden')
+  renderGallery()
+}
+
+function removeGalleryBtn() {
+  // document.querySelector('.switch-lang').classList.add('hidden')
+  document.querySelector('.flex-btn').classList.add('hidden')
+  document.querySelector('.filters-keys').classList.add('hidden')
+  document.querySelector('.filter-vendor-select').classList.add('hidden')
+}
+
+function addGalleryBtns() {
+  document.querySelector('.flex-btn').classList.remove('hidden')
   document.querySelector('.filters-keys').classList.remove('hidden')
+  document.querySelector('.filter-vendor-select').classList.remove('hidden')
 }

@@ -36,6 +36,7 @@ var gMeme = {
       size: 20,
       align: 'center',
       color: 'red',
+      fillColor: 'blue',
       font: 'Impact',
     },
     {
@@ -43,6 +44,7 @@ var gMeme = {
       size: 20,
       align: 'center',
       color: 'red',
+      fillColor: 'blue',
       font: 'Impact',
     },
     {
@@ -50,6 +52,7 @@ var gMeme = {
       size: 20,
       align: 'center',
       color: 'red',
+      fillColor: 'blue',
       font: 'Impact',
     },
   ],
@@ -83,6 +86,10 @@ function addEmojiToTwxt(emoji) {
 
 function setcolor(meme, newColor) {
   meme.lines[meme.selectedLineIdx].color = newColor
+}
+
+function setFillcolor(meme, newColor) {
+  meme.lines[meme.selectedLineIdx].fillColor = newColor
 }
 
 function setFont(num) {
@@ -123,14 +130,14 @@ function drawText(text, idx) {
   gCtx.lineWidth = 2
 
   gCtx.strokeStyle = `${gMeme.lines[idx].color}`
-  // gCtx.fillStyle = 'yellow'
+  gCtx.fillStyle = `${gMeme.lines[idx].fillColor}`
   gCtx.font = `${gMeme.lines[idx].size}px ${gMeme.lines[idx].font}`
 
   gCtx.textAlign = gMeme.lines[idx].align
 
   // gCtx.textBaseline = 'middle'
   const { x, y } = setCoords(idx)
-
+  gCtx.fillText(text, x, y)
   gCtx.strokeText(text, x, y)
   let elTextInput = document.querySelector('input[name="image-text"]')
 
@@ -209,4 +216,15 @@ function disabledNextBtn(param) {
 function disabledPrevBtn(param) {
   var elBtn = document.querySelector('.prev')
   elBtn.disabled = param
+}
+
+function addLine() {
+  return gMeme.lines.push({
+    txt: '',
+    size: 20,
+    align: 'center',
+    color: 'red',
+    fillColor: 'blue',
+    font: 'Impact',
+  })
 }
